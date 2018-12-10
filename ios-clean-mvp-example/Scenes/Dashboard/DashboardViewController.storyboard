@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Uox-TN-S6a">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Dashboard View Controller-->
+        <scene sceneID="bcj-kw-XIR">
+            <objects>
+                <viewController id="Uox-TN-S6a" customClass="DashboardViewController" customModule="ios_app_architecture" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wol-FP-oNY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JS1-pB-rHo" userLabel="nameLabel">
+                                <rect key="frame" x="10" y="45" width="355" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Customer status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S8a-cr-In1">
+                                <rect key="frame" x="10" y="119" width="165" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DtW-2u-bXl" userLabel="customerStatusLabel">
+                                <rect key="frame" x="200" y="119" width="165" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ngp-M6-Vg9">
+                                <rect key="frame" x="10" y="165" width="355" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Refresh"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="refreshButtonTouchUpInside:" destination="Uox-TN-S6a" eventType="touchUpInside" id="9Dj-5I-GF5"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="7z5-d5-gFf">
+                                <rect key="frame" x="169" y="220" width="37" height="37"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="7z5-d5-gFf" firstAttribute="centerX" secondItem="9vS-DB-07N" secondAttribute="centerX" id="0bf-TR-uau"/>
+                            <constraint firstItem="JS1-pB-rHo" firstAttribute="top" secondItem="9vS-DB-07N" secondAttribute="top" constant="25" id="0iS-Cs-dSi"/>
+                            <constraint firstItem="DtW-2u-bXl" firstAttribute="leading" secondItem="S8a-cr-In1" secondAttribute="trailing" constant="25" id="3jg-db-UUT"/>
+                            <constraint firstItem="Ngp-M6-Vg9" firstAttribute="trailing" secondItem="DtW-2u-bXl" secondAttribute="trailing" id="5tK-UL-qTH"/>
+                            <constraint firstItem="DtW-2u-bXl" firstAttribute="centerY" secondItem="S8a-cr-In1" secondAttribute="centerY" id="PkB-0n-VBX"/>
+                            <constraint firstItem="Ngp-M6-Vg9" firstAttribute="leading" secondItem="S8a-cr-In1" secondAttribute="leading" id="Qf9-jG-tuQ"/>
+                            <constraint firstItem="9vS-DB-07N" firstAttribute="trailing" secondItem="JS1-pB-rHo" secondAttribute="trailing" constant="10" id="Sw9-iZ-yYo"/>
+                            <constraint firstItem="S8a-cr-In1" firstAttribute="leading" secondItem="JS1-pB-rHo" secondAttribute="leading" id="fjv-Az-NHu"/>
+                            <constraint firstItem="S8a-cr-In1" firstAttribute="top" secondItem="JS1-pB-rHo" secondAttribute="bottom" constant="50" id="jNu-qj-MVt"/>
+                            <constraint firstItem="DtW-2u-bXl" firstAttribute="trailing" secondItem="JS1-pB-rHo" secondAttribute="trailing" id="nLO-sC-Tsr"/>
+                            <constraint firstItem="Ngp-M6-Vg9" firstAttribute="top" secondItem="S8a-cr-In1" secondAttribute="bottom" constant="25" id="sVe-S1-fc0"/>
+                            <constraint firstItem="7z5-d5-gFf" firstAttribute="top" secondItem="Ngp-M6-Vg9" secondAttribute="bottom" constant="25" id="tpj-5A-PgU"/>
+                            <constraint firstItem="DtW-2u-bXl" firstAttribute="width" secondItem="S8a-cr-In1" secondAttribute="width" id="wG4-L1-371"/>
+                            <constraint firstItem="JS1-pB-rHo" firstAttribute="leading" secondItem="9vS-DB-07N" secondAttribute="leading" constant="10" id="yeK-mP-aEP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="9vS-DB-07N"/>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="7z5-d5-gFf" id="N3b-4s-Dxi"/>
+                        <outlet property="customerNameLabel" destination="JS1-pB-rHo" id="7hd-DW-T7k"/>
+                        <outlet property="customerStatusLabel" destination="DtW-2u-bXl" id="oWV-LD-Vh3"/>
+                        <outlet property="refreshButton" destination="Ngp-M6-Vg9" id="4SW-3G-vBf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p8p-10-OwQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="170" y="205"/>
+        </scene>
+    </scenes>
+</document>

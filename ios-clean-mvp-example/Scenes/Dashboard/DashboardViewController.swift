@@ -30,6 +30,9 @@ class DashboardViewController: UIViewController {
     @IBAction func refreshButtonTouchUpInside(_ sender: Any) {
         presenter?.refreshButtonTapped()
     }
+    @IBAction func billButtonTouchUpInside(_ sender: Any) {
+        presenter?.billButtonTapped()
+    }
 }
 
 extension DashboardViewController: DashboardViewProtocol {

@@ -9,6 +9,7 @@
 import UIKit
 
 protocol AppCoordinatorDelegate: AnyObject {
+    func userDidTapBill()
 }
 
 /**
@@ -28,5 +29,12 @@ class AppCoordinator: Coordinator {
 }
 
 extension AppCoordinator: AppCoordinatorDelegate {
+    func userDidTapBill() {
+        navigateToBill()
+    }
 
+    private func navigateToBill() {
+        let viewController = BillConfigurator().configure(coordinatorDelegate: self)
+        navigationController.pushViewController(viewController, animated: true)
+    }
 }

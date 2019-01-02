@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol DashboardViewProtocol: class {
+protocol DashboardViewProtocol: AnyObject {
     func updateCustomer(name: String, status: String)
 
     func toggleButton(enabled: Bool)
@@ -18,4 +18,5 @@ protocol DashboardViewProtocol: class {
 
 protocol DashboardPresenterProtocol: Presenter {
     func refreshButtonTapped()
+    func billButtonTapped()
 }

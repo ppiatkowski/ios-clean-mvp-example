@@ -41,6 +41,11 @@ extension DashboardPresenter: DashboardPresenterProtocol {
         fetchCustomerData()
     }
 
+    func billButtonTapped() {
+        coordinatorDelegate?.userDidTapBill()
+    }
+
+
     private func fetchCustomerData() {
         view?.showActivityIndicator()
         view?.toggleButton(enabled: false)

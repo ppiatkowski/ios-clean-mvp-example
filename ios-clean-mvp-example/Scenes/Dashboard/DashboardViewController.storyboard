@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Uox-TN-S6a">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Uox-TN-S6a">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,7 +13,7 @@
         <!--Dashboard View Controller-->
         <scene sceneID="bcj-kw-XIR">
             <objects>
-                <viewController id="Uox-TN-S6a" customClass="DashboardViewController" customModule="ios_app_architecture" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Uox-TN-S6a" customClass="DashboardViewController" customModule="ios_clean_mvp_example" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wol-FP-oNY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -52,6 +52,19 @@
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="7z5-d5-gFf">
                                 <rect key="frame" x="169" y="220" width="37" height="37"/>
                             </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pUp-g9-2D4">
+                                <rect key="frame" x="10" y="587" width="355" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Bill"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="billButtonTouchUpInside:" destination="Uox-TN-S6a" eventType="touchUpInside" id="Uig-QR-97O"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -59,12 +72,15 @@
                             <constraint firstItem="JS1-pB-rHo" firstAttribute="top" secondItem="9vS-DB-07N" secondAttribute="top" constant="25" id="0iS-Cs-dSi"/>
                             <constraint firstItem="DtW-2u-bXl" firstAttribute="leading" secondItem="S8a-cr-In1" secondAttribute="trailing" constant="25" id="3jg-db-UUT"/>
                             <constraint firstItem="Ngp-M6-Vg9" firstAttribute="trailing" secondItem="DtW-2u-bXl" secondAttribute="trailing" id="5tK-UL-qTH"/>
+                            <constraint firstItem="pUp-g9-2D4" firstAttribute="centerX" secondItem="9vS-DB-07N" secondAttribute="centerX" id="Ix0-QJ-HEd"/>
                             <constraint firstItem="DtW-2u-bXl" firstAttribute="centerY" secondItem="S8a-cr-In1" secondAttribute="centerY" id="PkB-0n-VBX"/>
                             <constraint firstItem="Ngp-M6-Vg9" firstAttribute="leading" secondItem="S8a-cr-In1" secondAttribute="leading" id="Qf9-jG-tuQ"/>
                             <constraint firstItem="9vS-DB-07N" firstAttribute="trailing" secondItem="JS1-pB-rHo" secondAttribute="trailing" constant="10" id="Sw9-iZ-yYo"/>
+                            <constraint firstItem="pUp-g9-2D4" firstAttribute="width" secondItem="Ngp-M6-Vg9" secondAttribute="width" id="WBv-CY-2mQ"/>
                             <constraint firstItem="S8a-cr-In1" firstAttribute="leading" secondItem="JS1-pB-rHo" secondAttribute="leading" id="fjv-Az-NHu"/>
                             <constraint firstItem="S8a-cr-In1" firstAttribute="top" secondItem="JS1-pB-rHo" secondAttribute="bottom" constant="50" id="jNu-qj-MVt"/>
                             <constraint firstItem="DtW-2u-bXl" firstAttribute="trailing" secondItem="JS1-pB-rHo" secondAttribute="trailing" id="nLO-sC-Tsr"/>
+                            <constraint firstItem="9vS-DB-07N" firstAttribute="bottom" secondItem="pUp-g9-2D4" secondAttribute="bottom" constant="50" id="qJl-CM-BdR"/>
                             <constraint firstItem="Ngp-M6-Vg9" firstAttribute="top" secondItem="S8a-cr-In1" secondAttribute="bottom" constant="25" id="sVe-S1-fc0"/>
                             <constraint firstItem="7z5-d5-gFf" firstAttribute="top" secondItem="Ngp-M6-Vg9" secondAttribute="bottom" constant="25" id="tpj-5A-PgU"/>
                             <constraint firstItem="DtW-2u-bXl" firstAttribute="width" secondItem="S8a-cr-In1" secondAttribute="width" id="wG4-L1-371"/>
